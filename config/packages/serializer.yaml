@@ -1,0 +1,6 @@
+framework:
+    serializer:
+        enabled: true
+        default_context:
+            serialization:
+                circular_reference_handler: 'App\Serializer\CircularReferenceHandler'
