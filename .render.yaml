@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: restaurant
+    runtime: php
+    buildCommand: |
+      curl -sS https://getcomposer.org/installer | php
+      mv composer.phar /usr/local/bin/composer
+      composer install --no-dev --optimize-autoloader
+    startCommand: php -S 0.0.0.0:10000 -t public
+    envVars:
+      - key: APP_ENV
+        value: prod
+      - key: APP_DEBUG
+        value: 0
